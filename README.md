@@ -100,6 +100,10 @@ After a while, you should be able to access http://localhost:5000 and log in wit
 4. Start ClojureScript application watch `npx shadow-cljs watch app`
 5. Open http://localhost:5000 and start playing around
 
+## Preview
+
+![Screenshot of the main page](docs/mercurius-main-page.png)
+
 ## Contributing
 
 I'm by no means an expert in any of the principles or technologies used in this project, so feel free to share your thoughts, submit bug reports, pull requests, etc.
