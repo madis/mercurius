@@ -84,6 +84,22 @@ docker-compose up
 
 After a while, you should be able to access http://localhost:5000 and log in with username `user1` or `user2` and password `secret`. I would recommend to open up two browser windows, one with each user, and place some orders so a trade is executed and you can observe the real-time comms feature.
 
+## Running without Docker for development
+
+1. Start nREPL server for the Clojure application:
+  ```
+  clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version "1.3.1"}}}' -M:dev -m nrepl.cmdline
+  ```
+2. Connect to the nREPL server, connect to it, seed and start the system:
+  ```
+    clojure -Sdeps '{:deps {reply/reply {:mvn/version "0.5.1"}}}' -M -m reply.main --attach localhost:`cat .nrepl-port`
+    (seed)
+    (start)
+   ```
+3. Install ClojureScript UI app dependencies `npm install`
+4. Start ClojureScript application watch `npx shadow-cljs watch app`
+5. Open http://localhost:5000 and start playing around
+
 ## Contributing
 
 I'm by no means an expert in any of the principles or technologies used in this project, so feel free to share your thoughts, submit bug reports, pull requests, etc.
